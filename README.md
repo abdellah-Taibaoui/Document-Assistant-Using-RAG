@@ -7,8 +7,6 @@ we're going to build Local RAG pipeline :
 
 All the way from PDF ingestion to "chat with PDF" style features.
 
-All using open-source tools.
-
 In our specific example, we'll build a RAG workflow using langchain and huggingface that allows a person to query PDF version of a Medical Textbooks that contain 558 pages and have an LLM generate responses back to the query based on passages of text from the Medical textbook.
 
 PDF source: [poly_pharmacologie_generale.pdf](https://www.pharmacobx.fr/documents/pharmacologiegenerale/poly_pharmacologie_generale.pdf).
@@ -30,8 +28,16 @@ You can run notebook `RAG_App.ipynb` directly in [Google Colab](https://colab.re
 
 
 ### Using Docker
-To build the RAG application and facilitate container deployment, I used TinyLlama, a lighter model that is simpler and easier to deploy.
+To facilitate container deployment, I used TinyLlama, a lighter LLM model that is simpler and easier to deploy.
 
+#### download All files to build the docker container :  [docker Files Link](https://drive.google.com/file/d/1_moMOPloKRvgo4d6xmtaaw4ff1SOL4Ki/view?usp=sharing)
+
+
+
+#### build the docker file to run the RAG_system
+```
+docker-compose up --build
+```
 
 ### Using Jupiter Notebook
 

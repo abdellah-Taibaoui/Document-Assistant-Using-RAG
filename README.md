@@ -1,4 +1,4 @@
-# RAG_Application
+# Document Assistant Using RAG
 
 we're going to build Local RAG pipeline :
 
@@ -6,33 +6,30 @@ All the way from PDF ingestion to "chat with PDF" style features.
 
 All using open-source tools.
 
-In our specific example, we'll build a RAG workflow that allows a person to query PDF version of a Textbooks and have an LLM generate responses back to the query based on passages of text from the textbook.
+In our specific example, we'll build a RAG workflow that allows a person to query PDF version of a Medical Textbooks that contain 558 pages and have an LLM generate responses back to the query based on passages of text from the Medical textbook.
 
-PDF source: 
+PDF source: [poly_pharmacologie_generale.pdf](https://www.pharmacobx.fr/documents/pharmacologiegenerale/poly_pharmacologie_generale.pdf).
 
+LLM model used : [TinyLlama](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF).
 
+embedding model used :[all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
 ## Getting Started
 
-Two main options:
-1. If you have a local NVIDIA GPU with 5GB+ VRAM, follow the steps below to have this pipeline run locally on your machine. 
-2. If you don’t have a local NVIDIA GPU, you can follow along in Google Colab and have it run on a NVIDIA GPU there. 
+Note: Tested in Python 3.11, running on Windows 10 without GPU and on 8GB of RAM.
+
 
 ## Prerequisites and Setup
 
-
-Note: Tested in Python 3.11, running on Windows 11 with a NVIDIA RTX 4090 with CUDA 12.1.
-
 ### Using Google Colab
 
-You can also run notebook `RAG_App.ipynb` directly in [Google Colab](). 
+You can run notebook `RAG_App.ipynb` directly in [Google Colab](). 
 
 
 ### Using Docker
 
+
 ### Using Jupiter Notebook
-
-
 
 #### Clone repo
 
@@ -64,7 +61,7 @@ Windows:
 
 ### Install requirements
 
-```
+
 Install Visual Studio C++
 
 ```
@@ -83,16 +80,35 @@ Jupyter Notebook
 
 ```
 jupyter notebook
+```
 
 
 **Setup notes:** 
 * If you run into any install/setup troubles, please leave an issue.
-* To get access to the Gemma LLM models, you will have to [agree to the terms & conditions](https://huggingface.co/google/gemma-7b-it) on the Gemma model page on Hugging Face. You will then have to authorize your local machine via the [Hugging Face CLI/Hugging Face Hub `login()` function](https://huggingface.co/docs/huggingface_hub/en/quick-start#authentication). Once you've done this, you'll be able to download the models. If you're using Google Colab, you can add a [Hugging Face token](https://huggingface.co/docs/hub/en/security-tokens) to the "Secrets" tab.
-* For speedups, installing and compiling can take ~5 minutes to 3 hours depending on your system setup.
+* installing and compiling can take ~5 minutes to 1 hours depending on your system setup.
+
+## RAG pipeline Result example
+
+![result](https://github.com/user-attachments/assets/c759d9bf-e3e7-437a-9f44-d10e83cc50c6)
+
+* The question was : " c'est quoi Les effets anaphylactoïdes ? "
+
+* LLM without RAG response :
+  
+"'\n\nComparaisons : \n1. Les effets anaphylactoïdes sont des effets secondaires de la maladie, souvent négatifs pour le patient. Ils ont tendance à surmonter ou supprimer les effets positifs d’une maladie (effet de repression). \n2. Les effets anaphylactoïdes sont généralement négatifs pour la santé publique et peuvent conduire à des déstabilisations, sauf si elle a été pratiquée avec une utilisation correcte. \n3. C’est-à-dire que les effets anaphylactoïdes sont inquiétants mais pas forcément négatifs, et leur utilisation doit être prudente. \n\nConséquences : \n1. Les effets anaphylactoïdes peuvent entraîner des maladies graves ou d’ultimes, particulièrement chez les patients qui ont recours à des traitements par voûte ou autres méthodes. \n2. Des effets anaphylactoïdes peuvent s’accommod "
+
+* LLM with RAG response :
+  
+"Les effet(s) anaphylactoïdes sont des manifestations nocive(s) cliniquement procésées(s) des effets immuno-globulié(s) IgE. C'est-à-dire que ces manifestations (lesquelles peuvent être sévères) sont liées aux immuno-globulines IgE, c'est-à-dire aux médicaments anti-allergique ou au traitement immunologique."
+
+* The correct response from the document used: 
+
+![response_from_doc](https://github.com/user-attachments/assets/4d27d44e-6d49-42dd-9fa7-d1ddaafde51d)
 
 
 
 ## What is RAG?
+
 
 RAG stands for Retrieval Augmented Generation.
 

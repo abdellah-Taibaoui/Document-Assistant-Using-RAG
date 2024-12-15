@@ -5,8 +5,6 @@ we're going to build Local RAG pipeline :
 ![rag pipline](https://github.com/user-attachments/assets/31857112-fad1-4ee9-9c1f-28c6809e5f93)
 
 
-All the way from PDF ingestion to "chat with PDF" style features.
-
 In our specific example, we'll build a RAG workflow using langchain and huggingface that allows a person to query PDF version of a Medical Textbooks that contain 558 pages and have an LLM generate responses back to the query based on passages of text from the Medical textbook.
 
 PDF source: [poly_pharmacologie_generale.pdf](https://www.pharmacobx.fr/documents/pharmacologiegenerale/poly_pharmacologie_generale.pdf).
@@ -27,11 +25,17 @@ Note: Tested in Python 3.11, running on Windows 10 without GPU and on 8GB of RAM
 You can run notebook `RAG_App.ipynb` directly in [Google Colab](https://colab.research.google.com/drive/17DVKATD3dRTBlAKbe-2CmpgQ3K4RF1zo?usp=sharing). 
 
 
-### Using Docker
+### Using Docker to do a demo
 To facilitate container deployment, I used TinyLlama, a lighter LLM model that is simpler and easier to deploy.
+And i asked the model : "c'est quoi Les effets anaphylactoïdes ? "
+#### install [visual studio cpp](https://visualstudio.microsoft.com/fr/downloads/)
+#### install and run [Docker desktop](https://docs.docker.com/desktop/)
 
-#### download All files to build the docker container :  [docker Files Link](https://drive.google.com/file/d/1_moMOPloKRvgo4d6xmtaaw4ff1SOL4Ki/view?usp=sharing)
+#### download and open files to build the docker container :  [docker Files Link](https://drive.google.com/file/d/1_moMOPloKRvgo4d6xmtaaw4ff1SOL4Ki/view?usp=sharing)
 
+ the result 
+
+ ![docker_demo](https://github.com/user-attachments/assets/957d0b86-3342-40db-bfc9-5df6c762fb52)
 
 
 #### build the docker file to run the RAG_system
@@ -72,7 +76,7 @@ Windows:
 ### Install requirements
 
 
-Install Visual Studio C++
+#### install [visual studio cpp](https://visualstudio.microsoft.com/fr/downloads/)
 
 ```
 pip install -r requirements.txt

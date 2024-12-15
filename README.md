@@ -2,15 +2,18 @@
 
 we're going to build Local RAG pipeline :
 
+![rag pipline](https://github.com/user-attachments/assets/31857112-fad1-4ee9-9c1f-28c6809e5f93)
+
+
 All the way from PDF ingestion to "chat with PDF" style features.
 
 All using open-source tools.
 
-In our specific example, we'll build a RAG workflow that allows a person to query PDF version of a Medical Textbooks that contain 558 pages and have an LLM generate responses back to the query based on passages of text from the Medical textbook.
+In our specific example, we'll build a RAG workflow using langchain and huggingface that allows a person to query PDF version of a Medical Textbooks that contain 558 pages and have an LLM generate responses back to the query based on passages of text from the Medical textbook.
 
 PDF source: [poly_pharmacologie_generale.pdf](https://www.pharmacobx.fr/documents/pharmacologiegenerale/poly_pharmacologie_generale.pdf).
 
-LLM model used : [TinyLlama](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF).
+LLM models used :[Mistral OpenOrca](https://huggingface.co/mav23/Mistral-7B-OpenOrca-GGUF) and [TinyLlama](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF) 
 
 embedding model used :[all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
@@ -23,10 +26,11 @@ Note: Tested in Python 3.11, running on Windows 10 without GPU and on 8GB of RAM
 
 ### Using Google Colab
 
-You can run notebook `RAG_App.ipynb` directly in [Google Colab](). 
+You can run notebook `RAG_App.ipynb` directly in [Google Colab](https://colab.research.google.com/drive/17DVKATD3dRTBlAKbe-2CmpgQ3K4RF1zo?usp=sharing). 
 
 
 ### Using Docker
+To build the RAG application and facilitate container deployment, I used TinyLlama, a lighter model that is simpler and easier to deploy.
 
 
 ### Using Jupiter Notebook

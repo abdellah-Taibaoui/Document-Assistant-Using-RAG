@@ -1,0 +1,9 @@
+langchain_community
+llama-cpp-python
+langchain_huggingface
+unstructured
+"unstructured[pdf]"
+tokenizers==0.21
+chromadb==0.5
+python-magic-bin
+sentence-transformers

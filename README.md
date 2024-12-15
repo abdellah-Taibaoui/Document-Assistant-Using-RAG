@@ -33,15 +33,14 @@ And i asked the model : "c'est quoi Les effets anaphylactoïdes ? "
 
 #### Download and open files to build the docker container :  [docker Files Link](https://drive.google.com/file/d/1_moMOPloKRvgo4d6xmtaaw4ff1SOL4Ki/view?usp=sharing)
 
-The Demo result 
-
- ![docker_demo](https://github.com/user-attachments/assets/957d0b86-3342-40db-bfc9-5df6c762fb52)
-
-
 #### Build the docker file to run the RAG_system
 ```
 docker-compose up --build
 ```
+
+The Demo result 
+
+ ![docker_demo](https://github.com/user-attachments/assets/957d0b86-3342-40db-bfc9-5df6c762fb52)
 
 ### Using Jupiter Notebook
 

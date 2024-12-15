@@ -83,13 +83,14 @@ pip install -r requirements.txt
 VS Code:
 
 ```
-code .
+code app.ipynb
 ```
 
 Jupyter Notebook
 
 ```
-jupyter notebook
+jupyter notebook app.ipynb
+
 ```
 
 
